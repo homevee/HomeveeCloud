@@ -1,0 +1,27 @@
+<style>
+  label, label > span { display: block; }
+  label { margin: 15px 0; }
+</style>
+
+<form action="/oauth/authorize" method="post">
+  <label>
+    <span>Benutzername</span>
+    <input type="text" name="username">
+  </label>
+  <label>
+    <span>Passwort</span>
+    <input type="password" name="password">
+  </label>
+  <label>
+    <span>Remote-ID</span>
+    <input type="text" name="remote_id">
+  </label>
+
+  <input type="hidden" name="client_id" value="{{client_id}}">
+  <input type="hidden" name="scope" value="{{scope}}">
+  <input type="hidden" name="redirect_uri" value="{{redirect_uri}}">
+  <input type="hidden" name="state" value="{{state}}">
+  <input type="hidden" name="response_type" value="{{response_type}}">
+
+  <button>Submit</button>
+</form>

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+	<!--[if IE 8]>
+		<html xmlns="http://www.w3.org/1999/xhtml" class="ie8" lang="de-DE">
+	<![endif]-->
+	<!--[if !(IE 8) ]><!-->
+		<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE">
+	<!--<![endif]-->
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Anmelden | Homevee</title>
+        <link rel='dns-prefetch' href='//s.w.org' />
+        <link rel='stylesheet' id='wprhe_style-css'  href='https://homevee.de/wprhe_qrcode_style.css?ver=5.1.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='dashicons-css'  href='https://homevee.de/wp-includes/css/dashicons.min.css?ver=5.1.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='buttons-css'  href='https://homevee.de/wp-includes/css/buttons.min.css?ver=5.1.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='forms-css'  href='https://homevee.de/wp-admin/css/forms.min.css?ver=5.1.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='l10n-css'  href='https://homevee.de/wp-admin/css/l10n.min.css?ver=5.1.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='login-css'  href='https://homevee.de/wp-admin/css/login.min.css?ver=5.1.1' type='text/css' media='all' />
+        <style>.login h1 a { background-image: url( https://homevee.de/wp-content/uploads/2018/04/homevee_logo.png ) !important; }</style>	<meta name='robots' content='noindex,noarchive' />
+        <meta name='referrer' content='strict-origin-when-cross-origin' /><meta name="viewport" content="width=device-width" />
+        <link rel="icon" href="https://homevee.de/wp-content/uploads/2018/04/homevee_logo-150x150.png" sizes="32x32" />
+        <link rel="icon" href="https://homevee.de/wp-content/uploads/2018/04/homevee_logo-300x300.png" sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href="https://homevee.de/wp-content/uploads/2018/04/homevee_logo-300x300.png" />
+        <meta name="msapplication-TileImage" content="https://homevee.de/wp-content/uploads/2018/04/homevee_logo-300x300.png" />
+	</head>
+    <body class="login login-action-login wp-core-ui  locale-de-de">
+        <div id="login">
+            <h1><a href="https://homevee.de" title="Homevee">Homevee</a></h1>
+
+            <form name="loginform" id="loginform" action="/oauth/authorize" method="post">
+                <p>
+                    <label for="user_login">Lokaler Benutzername<br />
+                    <input type="text" name="username" id="user_login" class="input" value="" size="20" autocapitalize="off" /></label>
+                </p>
+                <p>
+                    <label for="user_pass">Lokales Passwort<br />
+                    <input type="password" name="password" id="user_pass" class="input" value="" size="20" /></label>
+                </p>
+                    <p>
+                    <label for="user_pass">Remote-ID<br />
+                    <input type="text" name="remote_id" id="remote_id" class="input" value="" size="9" autocapitalize="on"/></label>
+                </p>
+                <p class="submit">
+                    <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Anmelden" />
+                </p>
+
+                <input type="hidden" name="client_id" value="{{client_id}}">
+                <input type="hidden" name="scope" value="{{scope}}">
+                <input type="hidden" name="redirect_uri" value="{{redirect_uri}}">
+                <input type="hidden" name="state" value="{{state}}">
+                <input type="hidden" name="response_type" value="{{response_type}}">
+
+            </form>
+
+        <script type="text/javascript">
+        function wp_attempt_focus(){
+        setTimeout( function(){ try{
+                d = document.getElementById('user_login');
+                    d.focus();
+        d.select();
+        } catch(e){}
+        }, 200);
+        }
+
+                wp_attempt_focus();
+                if(typeof wpOnload=='function')wpOnload();
+                </script>
+        <div class="privacy-policy-page-link"><a class="privacy-policy-link" target="blank" href="https://homevee.de/datenschutzbelehrung/">Datenschutzbelehrung</a></div>
+        </div>
+            <div class="clear"></div>
+	</body>
+</html>
+	
