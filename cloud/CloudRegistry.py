@@ -1,7 +1,7 @@
 from iothub_service_client.iothub_service_client import IoTHubRegistryManager, IoTHubRegistryManagerAuthMethod, \
     IoTHubDeviceStatus, IoTHubError
 
-from cloud.Utils import Utils
+from cloud.Helper.Utils import Utils
 
 
 class CloudRegistry:

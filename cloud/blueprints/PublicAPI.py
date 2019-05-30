@@ -1,14 +1,13 @@
 #!flask/bin/python
 import json
 import traceback
-import urllib
 
 from flask import Blueprint, abort, request
 
 from cloud.CloudNode_Azure import CloudNode
 from cloud.HomeveeCloud import HomeveeCloud
 from cloud.HomeveeServer import HomeveeServer
-from cloud.Utils import Utils
+from cloud.Helper.Utils import Utils
 
 PublicAPI = Blueprint('PublicAPI', __name__, template_folder='templates')
 

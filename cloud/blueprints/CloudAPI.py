@@ -4,7 +4,7 @@ import traceback
 
 from flask import Blueprint, abort, request
 
-from cloud.Database import Database
+from cloud.Helper.Database import Database
 from cloud.HomeveeCloud import HomeveeCloud
 from cloud.HomeveeServer import HomeveeServer
 

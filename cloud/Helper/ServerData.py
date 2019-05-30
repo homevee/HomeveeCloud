@@ -1,5 +1,4 @@
-from cloud.Database import Database
-
+from cloud.Helper.Database import Database
 
 class ServerData():
     def __init__(self):

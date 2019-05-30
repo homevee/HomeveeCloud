@@ -1,7 +1,6 @@
 #!flask/bin/python
 import argparse
 from flask import Flask
-from cloud.Database import Database
 from cloud.blueprints.AlexaAPI import AlexaAPI
 from cloud.blueprints.CloudAPI import CloudAPI
 from cloud.blueprints.GoogleHomeAPI import GoogleHomeAPI
@@ -36,6 +35,6 @@ if __name__ == '__main__':
         app.register_blueprint(blueprint)
 
     if DEV_ENV:
-        app.run(host='0.0.0.0', debug=True)
+        app.run(debug=True)
     else:
         app.run(host=HOST, port=443, ssl_context=(FULLCHAIN_FILE, KEY_FILE))

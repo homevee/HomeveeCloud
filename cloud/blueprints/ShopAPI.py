@@ -4,7 +4,7 @@ import traceback
 from flask import Blueprint, abort, request
 
 from cloud.HomeveeServer import HomeveeServer
-from cloud.blueprints.functions.ServerData import ServerData
+from cloud.Helper.ServerData import ServerData
 
 ShopAPI = Blueprint('ShopAPI', __name__, template_folder='templates')
 

@@ -1,6 +1,6 @@
 import mysql.connector
 
-from cloud.Utils import Utils
+from cloud.Helper.Utils import Utils
 
 class Database():
     def __init__(self, db=None):

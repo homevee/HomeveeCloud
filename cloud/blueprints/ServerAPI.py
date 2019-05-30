@@ -4,9 +4,10 @@ import traceback
 
 from flask import Blueprint, abort, request
 
-from cloud.Database import Database
+from cloud.Helper.Database import Database
+from cloud.Helper.FirebaseAPI import FirebaseAPI
 from cloud.HomeveeServer import HomeveeServer
-from cloud.Utils import Utils
+from cloud.Helper.Utils import Utils
 
 ServerAPI = Blueprint('SeverAPI', __name__, template_folder='templates')
 
@@ -127,7 +128,7 @@ def send_notification():
         registration_ids = data['registration_ids']
         message_data = data['message_data']
 
-        Utils.send_notification(registration_ids, message_data)
+        FirebaseAPI.send_notification(registration_ids, message_data)
 
         return json.dumps({'status': 'ok'})
     except:
