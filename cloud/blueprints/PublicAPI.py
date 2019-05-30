@@ -4,7 +4,7 @@ import traceback
 
 from flask import Blueprint, abort, request
 
-from cloud.CloudNode_Azure import CloudNode
+from cloud.CloudNode import CloudNode
 from cloud.HomeveeCloud import HomeveeCloud
 from cloud.HomeveeServer import HomeveeServer
 from cloud.Helper.Utils import Utils
