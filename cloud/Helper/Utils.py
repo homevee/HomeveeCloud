@@ -32,4 +32,5 @@ class Utils():
     def get_config_data():
         with open('/homevee_cloud_data/config.json') as json_file:
             data = json.load(json_file)
+            print(data)
             return data
