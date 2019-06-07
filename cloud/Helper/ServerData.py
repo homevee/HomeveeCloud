@@ -8,7 +8,7 @@ class ServerData():
     def get(key):
         database = Database()
 
-        result = database.do_query("SELECT DATA_VALUE FROM KEY_VALUE WHERE DATA_KEY = %s", (key,))
+        result = database.do_query("SELECT DATA_VALUE, DATA_VALUE FROM KEY_VALUE WHERE DATA_KEY = %s", (key,))
 
         key, value = result.fetchone()
 
