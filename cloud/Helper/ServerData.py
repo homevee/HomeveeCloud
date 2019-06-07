@@ -10,7 +10,7 @@ class ServerData():
 
         result = database.do_query("SELECT DATA_VALUE FROM KEY_VALUE WHERE DATA_KEY = %s", (key,))
 
-        value = result.fetchone()
+        key, value = result.fetchone()
 
         return value
 
