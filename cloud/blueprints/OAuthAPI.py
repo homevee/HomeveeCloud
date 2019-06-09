@@ -41,7 +41,7 @@ def user_oauth_authorize():
     auth_code = "dYwb6BYSe59TsdjkUYmbNA8fzW9pFQCvVYRzk5F68KVG8NnXwsfcTLXtpezfrafD"
     access_token = "ZDvjXFzTagZAGUcXhjUyWr6Z9sGmGYWZxutD3dYGYaPY4cZ2GM9ay5yV7ruPFMPb"
 
-    url = redirect_uri + "?state=" + state + "&code=" + auth_code# + '&scope='+scope #+ "&access_token=" + access_token
+    url = redirect_uri + "#state=" + state + "&code=" + auth_code# + '&scope='+scope #+ "&access_token=" + access_token
 
     data = {
         'scope': scope,
