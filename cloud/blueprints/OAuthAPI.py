@@ -78,11 +78,9 @@ def user_oauth_token():
 
     if redirect_uri is None:
         data = {
-            'scope': scope,
             'access_token': access_token,
             'refresh_token': refresh_token,
             'expires_in': expires_in,
-            'state': state,
             'token_type': 'bearer'
         }
         return json.dumps(data)
