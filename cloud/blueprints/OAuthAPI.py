@@ -77,7 +77,7 @@ def user_oauth_token():
 
     print(redirect_uri, scope, expires_in, state, access_token, refresh_token)
 
-    if redirect_uri is None or True:
+    if redirect_uri is None or client_id == "alexa":
         data = {
             'access_token': access_token,
             'refresh_token': refresh_token,
