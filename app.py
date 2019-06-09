@@ -39,8 +39,6 @@ if __name__ == '__main__':
     if DEV_ENV:
         app.run(debug=True)
     elif TEST_ENV:
-        HOST = "dev-test.homevee.de"
-
         CERT_FILE = "/etc/letsencrypt/live/" + HOST + "/cert.pem"
         CHAIN_FILE = "/etc/letsencrypt/live/" + HOST + "/chain.pem"
         FULLCHAIN_FILE = "/etc/letsencrypt/live/" + HOST + "/fullchain.pem"
