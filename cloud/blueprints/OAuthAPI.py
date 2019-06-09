@@ -54,7 +54,8 @@ def user_oauth_authorize():
 
     print("redirect url: " + url)
 
-    return redirect(url)
+    return url
+    #return redirect(url)
 
 
 @OAuthAPI.route('/oauth/token', methods=['POST'])
