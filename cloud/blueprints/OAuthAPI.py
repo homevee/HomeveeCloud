@@ -87,7 +87,7 @@ def user_oauth_token():
         }
         return json.dumps(data)
     else:
-        url = redirect_uri + "?scope=" + scope + "&access_token=" + access_token + "&refresh_token=" \
-              + refresh_token + "&expires_in=" + str(expires_in) + "&token_type=bearer"
+        url = redirect_uri + "?scope=" + scope + "&token_type=bearer" + "#state="+state+"&access_token=" \
+              + access_token + "&refresh_token=" + refresh_token + "&expires_in=" + str(expires_in)
         print("redirect url: " + url)
         return redirect(url)
