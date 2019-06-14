@@ -37,13 +37,13 @@ if __name__ == '__main__':
         app.register_blueprint(blueprint)
 
     if DEV_ENV:
-        app.run(debug=True)
+        app.run(debug=True, threaded=True)
     elif TEST_ENV:
         CERT_FILE = "/etc/letsencrypt/live/" + HOST + "/cert.pem"
         CHAIN_FILE = "/etc/letsencrypt/live/" + HOST + "/chain.pem"
         FULLCHAIN_FILE = "/etc/letsencrypt/live/" + HOST + "/fullchain.pem"
         KEY_FILE = "/etc/letsencrypt/live/" + HOST + "/privkey.pem"
 
-        app.run(host=HOST, port=7777, ssl_context=(FULLCHAIN_FILE, KEY_FILE))
+        app.run(host=HOST, port=7777, ssl_context=(FULLCHAIN_FILE, KEY_FILE), threaded=True)
     else:
-        app.run(host=HOST, port=443, ssl_context=(FULLCHAIN_FILE, KEY_FILE))
+        app.run(host=HOST, port=443, ssl_context=(FULLCHAIN_FILE, KEY_FILE), threaded=True)
