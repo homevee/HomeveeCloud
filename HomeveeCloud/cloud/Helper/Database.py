@@ -1,6 +1,6 @@
 import mysql.connector
 
-from cloud.Helper.Utils import Utils
+from HomeveeCloud.cloud.Helper.Utils import Utils
 
 class Database():
     def __init__(self, db=None):

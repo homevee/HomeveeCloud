@@ -4,9 +4,9 @@ import traceback
 
 from flask import Blueprint, abort, request
 
-from cloud.Helper.Database import Database
-from cloud.HomeveeCloud import HomeveeCloud
-from cloud.HomeveeServer import HomeveeServer
+from HomeveeCloud.cloud.Helper.Database import Database
+from HomeveeCloud.cloud.HomeveeCloud import HomeveeCloud
+from HomeveeCloud.cloud.HomeveeServer import HomeveeServer
 
 CloudAPI = Blueprint('CloudAPI', __name__, template_folder='templates')
 
