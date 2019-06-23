@@ -1,6 +1,6 @@
 from pyfcm import FCMNotification
 
-from HomeveeCloud.cloud.Helper import ServerData
+from HomeveeCloud.cloud.Helper.ServerData import ServerData
 
 
 class FirebaseAPI:

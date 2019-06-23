@@ -1,7 +1,7 @@
 from iothub_service_client.iothub_service_client import IoTHubRegistryManager, IoTHubRegistryManagerAuthMethod, \
     IoTHubDeviceStatus, IoTHubError
 
-from HomeveeCloud.cloud.Helper import Utils
+from HomeveeCloud.cloud.Helper.Utils import Utils
 
 
 class CloudRegistry:

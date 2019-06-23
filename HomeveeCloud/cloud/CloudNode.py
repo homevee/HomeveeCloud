@@ -3,7 +3,7 @@ import json
 from iothub_client.iothub_client import IoTHubTransportProvider
 from iothub_service_client.iothub_service_client import IoTHubDeviceMethod
 
-from HomeveeCloud.cloud.Helper import Utils
+from HomeveeCloud.cloud.Helper.Utils import Utils
 
 METHOD_PROCESS_DATA = "ProcessData"
 

@@ -7,7 +7,7 @@ from flask import Blueprint, abort, request
 from HomeveeCloud.cloud.CloudNode import CloudNode
 from HomeveeCloud.cloud.HomeveeCloud import HomeveeCloud
 from HomeveeCloud.cloud.HomeveeServer import HomeveeServer
-from HomeveeCloud.cloud.Helper import Utils
+from HomeveeCloud.cloud.Helper.Utils import Utils
 
 PublicAPI = Blueprint('PublicAPI', __name__, template_folder='templates')
 
