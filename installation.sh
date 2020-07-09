@@ -4,7 +4,7 @@ sudo apt-get upgrade -y
 
 #Install pip
 sudo apt install python3-pip -y
-sudo apt-get install libapache2-mod-wsgi python-dev apache2 -y
+sudo apt-get install libapache2-mod-wsgi python-dev apache2 libboost-all-dev sudo apt-get install libboost1.58-all libcurl3 -y
 sudo a2enmod wsgi
 sudo service apache2 restart
 
