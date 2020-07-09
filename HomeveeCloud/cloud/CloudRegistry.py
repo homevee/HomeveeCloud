@@ -1,5 +1,4 @@
-from iothub_service_client.iothub_service_client import IoTHubRegistryManager, IoTHubRegistryManagerAuthMethod, \
-    IoTHubDeviceStatus, IoTHubError
+from azure.iot.hub import IoTHubRegistryManager
 
 from HomeveeCloud.cloud.Helper.Utils import Utils
 
@@ -39,11 +38,11 @@ class CloudRegistry:
         """
         try:
             remote_id = self.generate_remote_id()
+            status = "enabled"
             primary_key, secondary_key = self.generate_keys()
-            auth_method = IoTHubRegistryManagerAuthMethod.SHARED_PRIVATE_KEY
-            new_device = self.iothub_registry_manager.create_device(remote_id, primary_key, secondary_key, auth_method)
+            new_device = self.iothub_registry_manager.create_device_with_sas(remote_id, primary_key, secondary_key, status)
             return new_device
-        except IoTHubError as iothub_error:
+        except Exception as iothub_error:
             print("Unexpected error {0}".format(iothub_error))
             return
         except KeyboardInterrupt:
@@ -57,12 +56,11 @@ class CloudRegistry:
         """
         try:
             primary_key, secondary_key = self.generate_keys()
-            status = IoTHubDeviceStatus.ENABLED
-            auth_method = IoTHubRegistryManagerAuthMethod.SHARED_PRIVATE_KEY
-            self.iothub_registry_manager.update_device(remote_id, primary_key, secondary_key, status, auth_method)
+            status = "enabled"
+            self.iothub_registry_manager.update_device_with_sas(remote_id, remote_id, primary_key, secondary_key, status)
             updated_device = self.iothub_registry_manager.get_device(remote_id)
             return updated_device
-        except IoTHubError as iothub_error:
+        except Exception as iothub_error:
             print("Unexpected error {0}".format(iothub_error))
             return
         except KeyboardInterrupt:

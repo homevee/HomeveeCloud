@@ -1,7 +1,7 @@
 import json
 
-from iothub_client.iothub_client import IoTHubTransportProvider
-from iothub_service_client.iothub_service_client import IoTHubDeviceMethod
+from azure.iot.hub import IoTHubRegistryManager
+from azure.iot.hub.protocol.models import CloudToDeviceMethod
 
 from HomeveeCloud.cloud.Helper.Utils import Utils
 
@@ -10,7 +10,6 @@ METHOD_PROCESS_DATA = "ProcessData"
 class CloudNode():
 
     def __init__(self, host_name, shared_access_key_name, shared_access_key):
-        self.protocol = IoTHubTransportProvider.MQTT
         self.host_name = host_name
         self.shared_access_key_name = shared_access_key_name
         self.shared_access_key = shared_access_key
@@ -18,9 +17,8 @@ class CloudNode():
         self.connection_string = "HostName="+self.host_name+";SharedAccessKeyName="+\
                                  self.shared_access_key_name+";SharedAccessKey="+self.shared_access_key
 
-        self.timeout = 5000
-
-        self.iothub_device_method = IoTHubDeviceMethod(self.connection_string)
+        # Create IoTHubRegistryManager
+        self.registry_manager = IoTHubRegistryManager(self.connection_string)
 
         return
 
@@ -32,7 +30,8 @@ class CloudNode():
         else:
             args = data
 
-        response = self.iothub_device_method.invoke(remote_id, METHOD_PROCESS_DATA, args, self.timeout)
+        deviceMethod = CloudToDeviceMethod(method_name=METHOD_PROCESS_DATA, payload=args)
+        response = self.registry_manager.invoke_device_method(remote_id, deviceMethod)
         return response.payload
 
     @staticmethod
