@@ -30,7 +30,7 @@ class CloudRegistry:
         remote_id = "remote_id"
         return remote_id
 
-    def register_device(self, remote_id: str):
+    def register_device(self):
         """
         Registers a new device
         :param remote_id: the remote id

@@ -7,4 +7,4 @@ def log(string: str):
     :return:
     """
     if IS_DEBUG:
-        print(string)
+        print(str(string))

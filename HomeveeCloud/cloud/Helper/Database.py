@@ -1,5 +1,6 @@
 import mysql.connector
 
+from HomeveeCloud.cloud.Helper import Logger
 from HomeveeCloud.cloud.Helper.Utils import Utils
 
 class Database():
@@ -17,7 +18,7 @@ class Database():
         """
         mycursor = self.db.cursor()
 
-        print(sql, params)
+        Logger.log((sql, params))
 
         mycursor.execute(sql, params)
 
