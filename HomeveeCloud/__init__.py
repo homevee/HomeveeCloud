@@ -1,6 +1,8 @@
 #!flask/bin/python
 import argparse
 from flask import Flask
+from flask_cors import CORS
+
 from HomeveeCloud.cloud.blueprints.AlexaAPI import AlexaAPI
 from HomeveeCloud.cloud.blueprints.CloudAPI import CloudAPI
 from HomeveeCloud.cloud.blueprints.GoogleHomeAPI import GoogleHomeAPI
@@ -11,6 +13,7 @@ from HomeveeCloud.cloud.blueprints.ShopAPI import ShopAPI
 from HomeveeCloud.cloud.blueprints.ServerAPI import ServerAPI
 
 app = Flask(__name__)
+CORS(app)
 
 blueprints = [ServerAPI, ShopAPI, RestAPI, PublicAPI, CloudAPI, OAuthAPI, AlexaAPI, GoogleHomeAPI]
 
